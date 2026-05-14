@@ -1,0 +1,437 @@
+/* =========================
+   GLOBAL
+========================= */
+
+*{
+    font-family:"Comic Sans MS", cursive;
+    box-sizing:border-box;
+}
+
+body{
+
+    margin:0;
+
+    overflow-x:hidden;
+
+    text-align:center;
+
+    color:white;
+
+    background:
+    repeating-linear-gradient(
+        45deg,
+        red 0px,
+        yellow 40px,
+        lime 80px,
+        cyan 120px,
+        blue 160px,
+        magenta 200px
+    );
+
+    animation:bgmove 5s linear infinite;
+
+}
+
+@keyframes bgmove{
+
+    from{
+        background-position:0 0;
+    }
+
+    to{
+        background-position:400px 400px;
+    }
+
+}
+
+/* =========================
+   TOP
+========================= */
+
+.top{
+
+    background:black;
+
+    color:yellow;
+
+    padding:20px;
+
+    font-size:40px;
+
+    font-weight:bold;
+
+    border-bottom:10px ridge hotpink;
+
+    text-shadow:
+        4px 4px red,
+        0 0 15px yellow;
+
+}
+
+.top a{
+
+    color:cyan;
+
+}
+
+/* =========================
+   PLAYER
+========================= */
+
+.vlPlayer2007{
+
+    width:900px;
+
+    max-width:95%;
+
+    height:540px;
+
+    margin:40px auto;
+
+    background:#c0c0c0;
+
+    border-top:4px solid white;
+
+    border-left:4px solid white;
+
+    border-right:4px solid #444;
+
+    border-bottom:4px solid #444;
+
+    box-shadow:
+        10px 10px 0 black,
+        0 0 40px red;
+
+    overflow:hidden;
+
+}
+
+/* =========================
+   VIDEO AREA
+========================= */
+
+.vlVideoArea{
+
+    width:100%;
+
+    height:490px;
+
+    background:black;
+
+    position:relative;
+
+}
+
+.rufflePlayer{
+
+    width:100%;
+
+    height:100%;
+
+    background:black;
+
+}
+
+/* =========================
+   CONTROLS
+========================= */
+
+.vlControls{
+
+    width:100%;
+
+    height:50px;
+
+    background:
+
+    linear-gradient(
+        to bottom,
+        #dcdcdc,
+        #9a9a9a
+    );
+
+    border-top:3px solid #777;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:6px;
+
+    padding:5px;
+
+}
+
+/* =========================
+   IMAGE BUTTONS
+========================= */
+
+.vlBtn{
+
+    width:32px;
+
+    height:32px;
+
+    background-image:url("skins/2007HD/img/buttons_green.png");
+
+    background-size:cover;
+
+    background-repeat:no-repeat;
+
+    background-position:center;
+
+    border:none;
+
+    cursor:pointer;
+
+    image-rendering:pixelated;
+
+    transition:.05s;
+
+}
+
+.vlBtn:active{
+
+    transform:translateY(1px) scale(0.97);
+
+}
+
+/* =========================
+   LOOP BUTTON
+========================= */
+
+.vlLoop{
+
+    width:32px;
+
+    height:32px;
+
+    background-image:url("skins/2007HD/img/loop.png");
+
+    background-size:cover;
+
+    background-repeat:no-repeat;
+
+    background-position:center;
+
+    border:none;
+
+    cursor:pointer;
+
+    image-rendering:pixelated;
+
+}
+
+/* =========================
+   FULLSCREEN BUTTON
+========================= */
+
+.vlFull{
+
+    width:32px;
+
+    height:32px;
+
+    background-image:url("skins/2007HD/img/full.png");
+
+    background-size:cover;
+
+    background-repeat:no-repeat;
+
+    background-position:center;
+
+    border:none;
+
+    cursor:pointer;
+
+    image-rendering:pixelated;
+
+}
+
+/* =========================
+   BUFFER BAR
+========================= */
+
+.vlBar{
+
+    flex:1;
+
+    height:14px;
+
+    background:#333;
+
+    border:2px inset #555;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.vlBuffer{
+
+    position:absolute;
+
+    left:0;
+
+    top:0;
+
+    width:60%;
+
+    height:100%;
+
+    background-image:url("skins/2007HD/img/buffer.png");
+
+    background-repeat:repeat-x;
+
+    background-size:auto 100%;
+
+    opacity:.8;
+
+}
+
+.vlProgress{
+
+    position:absolute;
+
+    left:0;
+
+    top:0;
+
+    width:30%;
+
+    height:100%;
+
+    background:
+
+    linear-gradient(
+        to bottom,
+        lime,
+        green
+    );
+
+    box-shadow:
+        0 0 10px lime;
+
+}
+
+/* =========================
+   TIME
+========================= */
+
+.vlTime{
+
+    background:black;
+
+    color:white;
+
+    padding:3px 6px;
+
+    font-size:14px;
+
+    border:2px inset #555;
+
+}
+
+/* =========================
+   EVIL TEXT
+========================= */
+
+.evil{
+
+    margin-top:40px;
+
+    font-size:70px;
+
+    font-weight:bold;
+
+    line-height:1.3;
+
+    animation:shake .08s infinite alternate;
+
+    text-shadow:
+        5px 5px black,
+        0 0 20px red,
+        0 0 20px yellow;
+
+}
+
+@keyframes shake{
+
+    from{
+        transform:translateX(-3px) rotate(-1deg);
+    }
+
+    to{
+        transform:translateX(3px) rotate(1deg);
+    }
+
+}
+
+.evil div:nth-child(1){
+    color:red;
+}
+
+.evil div:nth-child(2){
+    color:yellow;
+}
+
+.evil div:nth-child(3){
+    color:lime;
+}
+
+.evil div:nth-child(4){
+    color:cyan;
+}
+
+.evil div:nth-child(5){
+    color:orange;
+}
+
+.evil div:nth-child(6){
+    color:magenta;
+}
+
+/* =========================
+   MARQUEE
+========================= */
+
+marquee{
+
+    margin-top:40px;
+
+    background:black;
+
+    color:white;
+
+    padding:10px;
+
+    font-size:40px;
+
+    border-top:5px ridge red;
+
+    border-bottom:5px ridge blue;
+
+}
+
+/* =========================
+   RANDOM OLD WEB
+========================= */
+
+img{
+
+    image-rendering:pixelated;
+
+}
+
+button{
+
+    image-rendering:pixelated;
+
+}
+
+a{
+
+    color:cyan;
+
+}

@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SNOWYSS ITS EVIL</title>
+
+<script src="jquery.js"></script>
+<script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+
+<style>
+
+*{
+    font-family:"Comic Sans MS", cursive;
+    box-sizing:border-box;
+}
+
+body{
+
+    margin:0;
+
+    overflow-x:hidden;
+
+    text-align:center;
+
+    color:white;
+
+    background:
+    repeating-linear-gradient(
+        45deg,
+        red 0px,
+        yellow 40px,
+        lime 80px,
+        cyan 120px,
+        blue 160px,
+        magenta 200px
+    );
+
+    animation:bgmove 5s linear infinite;
+
+}
+
+@keyframes bgmove{
+
+    from{
+        background-position:0 0;
+    }
+
+    to{
+        background-position:400px 400px;
+    }
+
+}
+
+.top{
+
+    background:black;
+
+    color:yellow;
+
+    padding:20px;
+
+    font-size:40px;
+
+    font-weight:bold;
+
+    border-bottom:10px ridge hotpink;
+
+    text-shadow:
+        4px 4px red,
+        0 0 15px yellow;
+
+}
+
+.top a{
+
+    color:cyan;
+
+}
+
+/* PLAYER */
+
+.playerWrap{
+
+    width:900px;
+
+    max-width:95%;
+
+    margin:40px auto;
+
+}
+
+.vlPlayer2007{
+
+    width:100%;
+
+    height:540px;
+
+    background:#c0c0c0;
+
+    border-top:4px solid white;
+
+    border-left:4px solid white;
+
+    border-right:4px solid #444;
+
+    border-bottom:4px solid #444;
+
+    box-shadow:
+        10px 10px 0 black,
+        0 0 40px red;
+
+    overflow:hidden;
+
+}
+
+.vlVideoArea{
+
+    width:100%;
+
+    height:490px;
+
+    background:black;
+
+}
+
+.rufflePlayer{
+
+    width:100%;
+    height:100%;
+
+    background:black;
+
+}
+
+.vlControls{
+
+    width:100%;
+
+    height:50px;
+
+    background:
+
+    linear-gradient(
+        to bottom,
+        #dcdcdc,
+        #9a9a9a
+    );
+
+    border-top:3px solid #777;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:6px;
+
+    padding:5px;
+
+}
+
+/* BUTTONS */
+
+.vlBtn{
+
+    width:32px;
+
+    height:32px;
+
+    border:none;
+
+    background-image:url("skins/2007HD/img/buttons_green.png");
+
+    background-size:cover;
+
+    background-repeat:no-repeat;
+
+    background-position:center;
+
+    cursor:pointer;
+
+}
+
+.vlLoop{
+
+    width:32px;
+
+    height:32px;
+
+    border:none;
+
+    background-image:url("skins/2007HD/img/loop.png");
+
+    background-size:cover;
+
+    background-repeat:no-repeat;
+
+    background-position:center;
+
+    cursor:pointer;
+
+}
+
+.vlFull{
+
+    width:32px;
+
+    height:32px;
+
+    border:none;
+
+    background-image:url("skins/2007HD/img/full.png");
+
+    background-size:cover;
+
+    background-repeat:no-repeat;
+
+    background-position:center;
+
+    cursor:pointer;
+
+}
+
+/* BAR */
+
+.vlBar{
+
+    flex:1;
+
+    height:14px;
+
+    background:#333;
+
+    border:2px inset #555;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.vlBuffer{
+
+    position:absolute;
+
+    left:0;
+    top:0;
+
+    width:60%;
+    height:100%;
+
+    background-image:url("skins/2007HD/img/buffer.png");
+
+    background-repeat:repeat-x;
+
+    background-size:auto 100%;
+
+}
+
+.vlProgress{
+
+    position:absolute;
+
+    left:0;
+    top:0;
+
+    width:30%;
+    height:100%;
+
+    background:
+
+    linear-gradient(
+        to bottom,
+        lime,
+        green
+    );
+
+}
+
+/* TIME */
+
+.vlTime{
+
+    background:black;
+
+    color:white;
+
+    padding:3px 6px;
+
+    font-size:14px;
+
+    border:2px inset #555;
+
+}
+
+/* EVIL TEXT */
+
+.evil{
+
+    margin-top:40px;
+
+    font-size:70px;
+
+    font-weight:bold;
+
+    line-height:1.3;
+
+    animation:shake .08s infinite alternate;
+
+    text-shadow:
+        5px 5px black,
+        0 0 20px red,
+        0 0 20px yellow;
+
+}
+
+@keyframes shake{
+
+    from{
+        transform:translateX(-3px) rotate(-1deg);
+    }
+
+    to{
+        transform:translateX(3px) rotate(1deg);
+    }
+
+}
+
+.evil div:nth-child(1){ color:red; }
+.evil div:nth-child(2){ color:yellow; }
+.evil div:nth-child(3){ color:lime; }
+.evil div:nth-child(4){ color:cyan; }
+.evil div:nth-child(5){ color:orange; }
+.evil div:nth-child(6){ color:magenta; }
+
+marquee{
+
+    margin-top:40px;
+
+    background:black;
+
+    color:white;
+
+    padding:10px;
+
+    font-size:40px;
+
+}
+
+/* DOWNLOAD TROLL */
+
+.downloadZone{
+
+    margin-top:100px;
+
+    padding:60px;
+
+    background:black;
+
+    border-top:10px ridge red;
+
+    border-bottom:10px ridge blue;
+
+    font-size:50px;
+
+    font-weight:bold;
+
+    text-shadow:
+        4px 4px red,
+        0 0 20px yellow;
+
+}
+
+.downloadZone a{
+
+    color:lime;
+
+    font-size:60px;
+
+}
+
+.small{
+
+    margin-top:20px;
+
+    color:cyan;
+
+    font-size:30px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="top">
+
+    MADE BY CHATGPT 1.0!!!! TEST HERE NOW HAHAHAHA
+
+    <br><br>
+
+    <a href="https://chatgpt.com/g/g-rY4TswRMG-version-1-0?locale=pt-BR">
+
+        https://chatgpt.com/g/g-rY4TswRMG-version-1-0?locale=pt-BR
+
+    </a>
+
+</div>
+
+<div class="playerWrap">
+
+    <div class="vlPlayer2007">
+
+        <div class="vlVideoArea">
+
+            <div id="ruffle-player" class="rufflePlayer"></div>
+
+        </div>
+
+        <div class="vlControls">
+
+            <button class="vlBtn"></button>
+
+            <button class="vlLoop"></button>
+
+            <div class="vlBar">
+
+                <div class="vlBuffer"></div>
+
+                <div class="vlProgress"></div>
+
+            </div>
+
+            <div class="vlTime">
+
+                00:03 / 00:18
+
+            </div>
+
+            <button class="vlFull"></button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="evil">
+
+    <div>Snowyss its evil</div>
+    <div>Snowyss is evil</div>
+    <div>Snowyss he is evil</div>
+    <div>Snowyss he its evil</div>
+    <div>Snowyss, Snowindows, SnowonS</div>
+    <div>SNOWYSS ITS EVIL!!!!!!!!!!!!!!!!!!!!!!!!</div>
+
+</div>
+
+<marquee scrollamount="20">
+
+SNOWYSS EVIL SNOWYSS EVIL SNOWYSS EVIL SNOWYSS EVIL
+
+</marquee>
+
+<!-- DOWNLOAD AREA -->
+
+<div class="downloadZone">
+
+DOWNLOAD THE SOURCE HERE HERE HERE HERE
+
+<br><br>
+
+<a href="Gta6 no virus.exe" download>
+
+https://guthib.com/phozplsu/snowyssisevil
+
+</a>
+
+<div class="small">
+
+100% REAL GTA 6 NO VIRUS TRUST ME!!1!1!1!
+
+</div>
+
+</div>
+
+<script>
+
+window.RufflePlayer = window.RufflePlayer || {};
+
+window.addEventListener("load", () => {
+
+    const ruffle = window.RufflePlayer.newest();
+
+    const player = ruffle.createPlayer();
+
+    player.style.width = "100%";
+    player.style.height = "100%";
+
+    document
+        .getElementById("ruffle-player")
+        .appendChild(player);
+
+    player.load("snowyss evil.swf");
+
+    // FULLSCREEN BUTTON
+    document
+        .querySelector(".vlFull")
+        .onclick = () => {
+
+            document
+                .querySelector(".vlPlayer2007")
+                .requestFullscreen();
+
+        };
+
+});
+
+</script>
+
+</body>
+</html>
