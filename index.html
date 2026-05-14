@@ -5,9 +5,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>SNOWYSS ITS EVIL</title>
+<title>Snowyss is evil!!11!!!</title>
 
-<script src="jquery.js"></script>
+<!-- RUFFLE -->
 <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
 
 <style>
@@ -54,6 +54,8 @@ body{
 
 }
 
+/* TOP */
+
 .top{
 
     background:black;
@@ -80,11 +82,33 @@ body{
 
 }
 
+/* FILE PICKER */
+
+.fileArea{
+
+    margin:20px;
+
+}
+
+.fileInput{
+
+    font-size:25px;
+
+    background:black;
+
+    color:lime;
+
+    border:5px ridge hotpink;
+
+    padding:10px;
+
+}
+
 /* PLAYER */
 
 .playerWrap{
 
-    width:900px;
+    width:1000px;
 
     max-width:95%;
 
@@ -92,11 +116,7 @@ body{
 
 }
 
-.vlPlayer2007{
-
-    width:100%;
-
-    height:540px;
+.player{
 
     background:#c0c0c0;
 
@@ -116,182 +136,222 @@ body{
 
 }
 
-.vlVideoArea{
+/* TOP BAR */
 
-    width:100%;
+.playerTop{
 
-    height:490px;
-
-    background:black;
-
-}
-
-.rufflePlayer{
-
-    width:100%;
-    height:100%;
-
-    background:black;
-
-}
-
-.vlControls{
-
-    width:100%;
-
-    height:50px;
+    height:35px;
 
     background:
-
     linear-gradient(
         to bottom,
-        #dcdcdc,
-        #9a9a9a
+        #1d4fff,
+        #001199
     );
-
-    border-top:3px solid #777;
 
     display:flex;
 
     align-items:center;
 
-    gap:6px;
+    justify-content:space-between;
 
-    padding:5px;
+    padding:0 10px;
+
+    color:white;
+
+    font-weight:bold;
+
+    font-size:18px;
 
 }
 
-/* BUTTONS */
+/* WINDOW BUTTONS */
 
-.vlBtn{
+.windowBtns{
 
-    width:32px;
+    display:flex;
 
-    height:32px;
+    gap:5px;
 
-    border:none;
+}
 
-    background-image:url("skins/2007HD/img/buttons_green.png");
+.winBtn{
 
-    background-size:cover;
+    width:20px;
 
-    background-repeat:no-repeat;
+    height:20px;
 
-    background-position:center;
+    background:#c0c0c0;
+
+    border-top:2px solid white;
+
+    border-left:2px solid white;
+
+    border-right:2px solid #444;
+
+    border-bottom:2px solid #444;
+
+}
+
+/* SCREEN */
+
+.screen{
+
+    width:100%;
+
+    height:560px;
+
+    background:black;
+
+    position:relative;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+/* VIDEO */
+
+#videoPlayer{
+
+    width:100%;
+    height:100%;
+
+    background:black;
+
+}
+
+#ruffle-player{
+
+    width:100%;
+    height:100%;
+
+    display:block;
+
+}
+
+/* CONTROLS */
+
+.controls{
+
+    height:70px;
+
+    background:
+    linear-gradient(
+        to bottom,
+        #dcdcdc,
+        #999
+    );
+
+    border-top:3px solid #555;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:8px;
+
+}
+
+.ctrl{
+
+    width:45px;
+
+    height:45px;
+
+    background:#dcdcdc;
+
+    border-top:3px solid white;
+
+    border-left:3px solid white;
+
+    border-right:3px solid #555;
+
+    border-bottom:3px solid #555;
+
+    font-size:18px;
+
+    font-weight:bold;
 
     cursor:pointer;
 
 }
 
-.vlLoop{
+.ctrl:active{
 
-    width:32px;
+    border-top:3px solid #555;
 
-    height:32px;
+    border-left:3px solid #555;
 
-    border:none;
+    border-right:3px solid white;
 
-    background-image:url("skins/2007HD/img/loop.png");
-
-    background-size:cover;
-
-    background-repeat:no-repeat;
-
-    background-position:center;
-
-    cursor:pointer;
-
-}
-
-.vlFull{
-
-    width:32px;
-
-    height:32px;
-
-    border:none;
-
-    background-image:url("skins/2007HD/img/full.png");
-
-    background-size:cover;
-
-    background-repeat:no-repeat;
-
-    background-position:center;
-
-    cursor:pointer;
+    border-bottom:3px solid white;
 
 }
 
 /* BAR */
 
-.vlBar{
+.bar{
 
     flex:1;
 
-    height:14px;
+    height:20px;
 
-    background:#333;
+    background:black;
 
-    border:2px inset #555;
+    border:3px inset #666;
 
     position:relative;
 
     overflow:hidden;
 
+    cursor:pointer;
+
 }
 
-.vlBuffer{
+.progress{
 
     position:absolute;
 
     left:0;
     top:0;
 
-    width:60%;
-    height:100%;
+    width:0%;
 
-    background-image:url("skins/2007HD/img/buffer.png");
-
-    background-repeat:repeat-x;
-
-    background-size:auto 100%;
-
-}
-
-.vlProgress{
-
-    position:absolute;
-
-    left:0;
-    top:0;
-
-    width:30%;
     height:100%;
 
     background:
-
     linear-gradient(
         to bottom,
         lime,
         green
     );
 
+    box-shadow:
+        0 0 15px lime;
+
 }
 
 /* TIME */
 
-.vlTime{
+.time{
 
     background:black;
 
-    color:white;
+    color:lime;
 
-    padding:3px 6px;
+    padding:5px 10px;
 
-    font-size:14px;
+    font-size:18px;
 
-    border:2px inset #555;
+    border:3px inset #444;
+
+    min-width:150px;
 
 }
 
@@ -335,6 +395,8 @@ body{
 .evil div:nth-child(5){ color:orange; }
 .evil div:nth-child(6){ color:magenta; }
 
+/* MARQUEE */
+
 marquee{
 
     margin-top:40px;
@@ -349,7 +411,7 @@ marquee{
 
 }
 
-/* DOWNLOAD TROLL */
+/* DOWNLOAD */
 
 .downloadZone{
 
@@ -366,10 +428,6 @@ marquee{
     font-size:50px;
 
     font-weight:bold;
-
-    text-shadow:
-        4px 4px red,
-        0 0 20px yellow;
 
 }
 
@@ -399,64 +457,98 @@ marquee{
 
 <div class="top">
 
-    MADE BY CHATGPT 1.0!!!! TEST HERE NOW HAHAHAHA
+MADE BY CHATGPT 1.0!!!! TEST HERE NOW HAHAHAHA
 
-    <br><br>
+<br><br>
 
-    <a href="https://chatgpt.com/g/g-rY4TswRMG-version-1-0?locale=pt-BR">
+<a href="https://chatgpt.com/g/g-rY4TswRMG-version-1-0?locale=pt-BR">
 
-        https://chatgpt.com/g/g-rY4TswRMG-version-1-0?locale=pt-BR
+https://chatgpt.com/g/g-rY4TswRMG-version-1-0?locale=pt-BR
 
-    </a>
+</a>
 
 </div>
+
+<!-- PROBABLY DONT MADE BY CHATGPT 1.0 -->
+
+<div class="fileArea">
+
+<input type="file" class="fileInput" id="fileInput">
+
+</div>
+
+<!-- PLAYER -->
 
 <div class="playerWrap">
 
-    <div class="vlPlayer2007">
+<div class="player">
 
-        <div class="vlVideoArea">
+<div class="playerTop">
 
-            <div id="ruffle-player" class="rufflePlayer"></div>
+<div>
 
-        </div>
-
-        <div class="vlControls">
-
-            <button class="vlBtn"></button>
-
-            <button class="vlLoop"></button>
-
-            <div class="vlBar">
-
-                <div class="vlBuffer"></div>
-
-                <div class="vlProgress"></div>
-
-            </div>
-
-            <div class="vlTime">
-
-                00:03 / 00:18
-
-            </div>
-
-            <button class="vlFull"></button>
-
-        </div>
-
-    </div>
+Snowyss Media Player 2007 HD FINAL FREE NO VIRUS
 
 </div>
 
+<div class="windowBtns">
+
+<div class="winBtn"></div>
+<div class="winBtn"></div>
+<div class="winBtn"></div>
+
+</div>
+
+</div>
+
+<div class="screen">
+
+<!-- HTML5 VIDEO -->
+<video id="videoPlayer"></video>
+
+<!-- RUFFLE -->
+<div id="ruffle-player"></div>
+
+</div>
+
+<div class="controls">
+
+<button class="ctrl" id="playBtn">▶</button>
+
+<button class="ctrl" id="pauseBtn">⏸</button>
+
+<button class="ctrl" id="stopBtn">⏹</button>
+
+<div class="bar" id="bar">
+
+<div class="progress" id="progress"></div>
+
+</div>
+
+<div class="time" id="time">
+
+00:00 / 00:00
+
+</div>
+
+<button class="ctrl" id="fullscreenBtn">⛶</button>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- EVIL -->
+
 <div class="evil">
 
-    <div>Snowyss its evil</div>
-    <div>Snowyss is evil</div>
-    <div>Snowyss he is evil</div>
-    <div>Snowyss he its evil</div>
-    <div>Snowyss, Snowindows, SnowonS</div>
-    <div>SNOWYSS ITS EVIL!!!!!!!!!!!!!!!!!!!!!!!!</div>
+<div>Snowyss its evil</div>
+<div>Snowyss is evil</div>
+<div>Snowyss he is evil</div>
+<div>Snowyss he its evil</div>
+<div>Snowyss, Snowindows, SnowonS</div>
+<div>SNOWYSS ITS EVIL!!!!!!!!!!!!!!!!!!!!!!!!</div>
 
 </div>
 
@@ -466,7 +558,7 @@ SNOWYSS EVIL SNOWYSS EVIL SNOWYSS EVIL SNOWYSS EVIL
 
 </marquee>
 
-<!-- DOWNLOAD AREA -->
+<!-- DOWNLOAD -->
 
 <div class="downloadZone">
 
@@ -490,35 +582,244 @@ https://guthib.com/phozplsu/snowyssisevil
 
 <script>
 
-window.RufflePlayer = window.RufflePlayer || {};
+const fileInput = document.getElementById("fileInput");
+
+const video = document.getElementById("videoPlayer");
+
+const ruffleContainer = document.getElementById("ruffle-player");
+
+const playBtn = document.getElementById("playBtn");
+
+const pauseBtn = document.getElementById("pauseBtn");
+
+const stopBtn = document.getElementById("stopBtn");
+
+const progress = document.getElementById("progress");
+
+const bar = document.getElementById("bar");
+
+const time = document.getElementById("time");
+
+let currentPlayer = null;
+
+/*
+====================================
+AUTOLOAD SWF
+====================================
+*/
 
 window.addEventListener("load", () => {
 
-    const ruffle = window.RufflePlayer.newest();
-
-    const player = ruffle.createPlayer();
-
-    player.style.width = "100%";
-    player.style.height = "100%";
-
-    document
-        .getElementById("ruffle-player")
-        .appendChild(player);
-
-    player.load("snowyss evil.swf");
-
-    // FULLSCREEN BUTTON
-    document
-        .querySelector(".vlFull")
-        .onclick = () => {
-
-            document
-                .querySelector(".vlPlayer2007")
-                .requestFullscreen();
-
-        };
+    loadSWF("snowyss evil.swf");
 
 });
+
+/*
+====================================
+LOAD FILE
+====================================
+*/
+
+fileInput.addEventListener("change", (e) => {
+
+    const file = e.target.files[0];
+
+    if(!file) return;
+
+    const url = URL.createObjectURL(file);
+
+    const ext =
+    file.name.split(".").pop().toLowerCase();
+
+    if(ext === "swf"){
+
+        loadSWF(url);
+
+    }
+
+    else{
+
+        loadVideo(url);
+
+    }
+
+});
+
+/*
+====================================
+SWF
+====================================
+*/
+
+function loadSWF(src){
+
+    video.style.display = "none";
+
+    ruffleContainer.style.display = "block";
+
+    ruffleContainer.innerHTML = "";
+
+    window.RufflePlayer =
+    window.RufflePlayer || {};
+
+    const ruffle =
+    window.RufflePlayer.newest();
+
+    const player =
+    ruffle.createPlayer();
+
+    player.style.width = "100%";
+
+    player.style.height = "100%";
+
+    ruffleContainer.appendChild(player);
+
+    player.load(src);
+
+    currentPlayer = "swf";
+
+}
+
+/*
+====================================
+VIDEO
+====================================
+*/
+
+function loadVideo(src){
+
+    ruffleContainer.style.display = "none";
+
+    video.style.display = "block";
+
+    video.src = src;
+
+    video.play();
+
+    currentPlayer = "video";
+
+}
+
+/*
+====================================
+CONTROLS
+====================================
+*/
+
+playBtn.onclick = () => {
+
+    if(currentPlayer === "video"){
+
+        video.play();
+
+    }
+
+};
+
+pauseBtn.onclick = () => {
+
+    if(currentPlayer === "video"){
+
+        video.pause();
+
+    }
+
+};
+
+stopBtn.onclick = () => {
+
+    if(currentPlayer === "video"){
+
+        video.pause();
+
+        video.currentTime = 0;
+
+    }
+
+};
+
+/*
+====================================
+TIME UPDATE
+====================================
+*/
+
+video.addEventListener("timeupdate", () => {
+
+    const percent =
+    (video.currentTime / video.duration) * 100;
+
+    progress.style.width =
+    percent + "%";
+
+    const current =
+    format(video.currentTime);
+
+    const total =
+    format(video.duration);
+
+    time.innerText =
+    current + " / " + total;
+
+});
+
+function format(sec){
+
+    if(isNaN(sec)) return "00:00";
+
+    const mins =
+    Math.floor(sec / 60);
+
+    const secs =
+    Math.floor(sec % 60);
+
+    return (
+        String(mins).padStart(2,"0")
+        + ":" +
+        String(secs).padStart(2,"0")
+    );
+
+}
+
+/*
+====================================
+SEEK BAR
+====================================
+*/
+
+bar.addEventListener("click", (e) => {
+
+    if(currentPlayer !== "video") return;
+
+    const rect =
+    bar.getBoundingClientRect();
+
+    const x =
+    e.clientX - rect.left;
+
+    const percent =
+    x / rect.width;
+
+    video.currentTime =
+    percent * video.duration;
+
+});
+
+/*
+====================================
+FULLSCREEN
+====================================
+*/
+
+document
+.getElementById("fullscreenBtn")
+.onclick = () => {
+
+    document
+    .querySelector(".player")
+    .requestFullscreen();
+
+};
 
 </script>
 
